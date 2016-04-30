@@ -1,0 +1,9 @@
+slidePage内声明当前屏的索引和下一屏的索引以供其他函数联系
+touchstart内记录手指的纵坐标(e.originalEvent.changedTouches[0].pageY)，当前是第几屏;
+
+touchmove内通过e.originalEvent.changedTouches[0].pageY区分出上划下划
+所有this的兄弟hide（保证屏幕内最多只出现两个页面），移动则当前这屏缩小和移动，下一屏显示并移动并提高层级兄弟移除层级类名
+上下区别当前屏的移动方向，下一屏的移动，共同都是当前屏缩小，下一屏显示和提升层级
+
+touchend内通过e.originalEvent.changedTouches[0].pageY区分出上划下划
+当前屏缩到0.75，下一屏到达0，0位置
